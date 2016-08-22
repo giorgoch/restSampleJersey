@@ -25,13 +25,13 @@ Hi there this is a demo version of jersey WebServices.
 
 The users listed are
 
-    Alladin, The Thief, Persia 3, 12345, Persia 123456789
+  1  Alladin, The Thief, Persia 3, 12345, Persia 123456789
 
-    Lucky, Luke, Texas, 74185, El paso, 000000000
+  2  Lucky, Luke, Texas, 74185, El paso, 000000000
 
-    Marty, Martian, Mars 8, 00000, Mars, 7777777777
+  3  Marty, Martian, Mars 8, 00000, Mars, 7777777777
 
-    Zeus, The Olympian, Mount Olympos, 56789, Olympos, 99999999
+  4  Zeus, The Olympian, Mount Olympos, 56789, Olympos, 99999999
 
 
 
