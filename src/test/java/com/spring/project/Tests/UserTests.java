@@ -23,48 +23,108 @@ import com.mongodb.DBObject;
 import com.mongodb.util.JSON;
 
 @ActiveProfiles("dev")
-@ContextConfiguration(locations = { "classpath:*/dao-context.xml",
-		"classpath:*/security-context.xml", "classpath:*/datasource.xml" })
+@ContextConfiguration(locations = { "classpath:*/dao-context.xml", "classpath:*/security-context.xml",
+		"classpath:*/datasource.xml" })
 @RunWith(SpringJUnit4ClassRunner.class)
 public class UserTests {
-	
-	
+
 	@SuppressWarnings("deprecation")
 	@Test
-	public void getUserTest() throws IOException { // ok
-		
-		CloseableHttpClient httpclient = HttpClients.createDefault();		
-		HttpGet httpget = new HttpGet("http://localhost:8080/projectClient/webservice/user/Json");	
-
-		CloseableHttpResponse response = httpclient.execute(httpget);		
-		
+	public void getUserTestJson() throws IOException { // ok
+		CloseableHttpClient httpclient = HttpClients.createDefault();
+		HttpGet httpget = new HttpGet("http://localhost:8080/projectClient/webservice/user/Json");
+		CloseableHttpResponse response = httpclient.execute(httpget);
 		try {
-			HttpEntity entity = response.getEntity();	
-			
-			if (HttpStatus.SC_OK == response.getStatusLine().getStatusCode()) {			
-				BufferedReader br = new BufferedReader( new InputStreamReader((response.getEntity().getContent())));
+			HttpEntity entity = response.getEntity();
+			if (HttpStatus.SC_OK == response.getStatusLine().getStatusCode()) {
+				BufferedReader br = new BufferedReader(new InputStreamReader((response.getEntity().getContent())));
 				String output;
 				System.out.println("Output from Server .... \n");
 				while ((output = br.readLine()) != null) {
-					
-					System.out.println(output+"\n");
+					System.out.println(output + "\n");
 				}
-
 				httpclient.getConnectionManager().shutdown();
 			} else {
-				throw new RuntimeException("Failed : http error code :"+response.getStatusLine().getStatusCode());
+				throw new RuntimeException("Failed : http error code :" + response.getStatusLine().getStatusCode());
 			}
 		} finally {
 			response.close();
-			
 		}
-		
-		
+	}
 	
-
+	@SuppressWarnings("deprecation")
+	@Test
+	public void getUserTestXml() throws IOException { // ok
+		CloseableHttpClient httpclient = HttpClients.createDefault();
+		HttpGet httpget = new HttpGet("http://localhost:8080/projectClient/webservice/user/Xml");
+		CloseableHttpResponse response = httpclient.execute(httpget);
+		try {
+			HttpEntity entity = response.getEntity();
+			if (HttpStatus.SC_OK == response.getStatusLine().getStatusCode()) {
+				BufferedReader br = new BufferedReader(new InputStreamReader((response.getEntity().getContent())));
+				String output;
+				System.out.println("Output from Server .... \n");
+				while ((output = br.readLine()) != null) {
+					System.out.println(output + "\n");
+				}
+				httpclient.getConnectionManager().shutdown();
+			} else {
+				throw new RuntimeException("Failed : http error code :" + response.getStatusLine().getStatusCode());
+			}
+		} finally {
+			response.close();
+		}
+	}
 	
-	
+	@SuppressWarnings("deprecation")
+	@Test
+	public void getUserTestXmlEach() throws IOException { // ok
+		CloseableHttpClient httpclient = HttpClients.createDefault();
+		int userId=0;
 		
+		HttpGet httpget = new HttpGet("http://localhost:8080/projectClient/webservice/user/Json");
+		CloseableHttpResponse response = httpclient.execute(httpget);
+		try {
+			HttpEntity entity = response.getEntity();
+			if (HttpStatus.SC_OK == response.getStatusLine().getStatusCode()) {
+				BufferedReader br = new BufferedReader(new InputStreamReader((response.getEntity().getContent())));
+				String output;
+				System.out.println("Output from Server .... \n");
+				while ((output = br.readLine()) != null) {
+					System.out.println(output + "\n");
+				}
+				httpclient.getConnectionManager().shutdown();
+			} else {
+				throw new RuntimeException("Failed : http error code :" + response.getStatusLine().getStatusCode());
+			}
+		} finally {
+			response.close();
+		}
+	}
+	
+	@SuppressWarnings("deprecation")
+	@Test
+	public void getUserTestJsonEach() throws IOException { // ok
+		CloseableHttpClient httpclient = HttpClients.createDefault();
+		int userId=0;
+		HttpGet httpget = new HttpGet("http://localhost:8080/projectClient/webservice/user/Json");
+		CloseableHttpResponse response = httpclient.execute(httpget);
+		try {
+			HttpEntity entity = response.getEntity();
+			if (HttpStatus.SC_OK == response.getStatusLine().getStatusCode()) {
+				BufferedReader br = new BufferedReader(new InputStreamReader((response.getEntity().getContent())));
+				String output;
+				System.out.println("Output from Server .... \n");
+				while ((output = br.readLine()) != null) {
+					System.out.println(output + "\n");
+				}
+				httpclient.getConnectionManager().shutdown();
+			} else {
+				throw new RuntimeException("Failed : http error code :" + response.getStatusLine().getStatusCode());
+			}
+		} finally {
+			response.close();
+		}
 	}
 
 }
