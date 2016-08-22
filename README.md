@@ -2,7 +2,8 @@
 Demo rest Web service with jersey
 
 This is a Demo for creating and consuming Rest web services.
-It demonstrates basic spring mvc.
+It demonstrates basic spring mvc also.
+TODO Aop for logging.
 
 I have use 
 Spring Tool Suite 
