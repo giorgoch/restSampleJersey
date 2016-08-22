@@ -2,6 +2,10 @@ package com.giorgoch.projectClient.Model;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
+/**
+ * @author giorgos chatziefstratiou
+ *
+ */
 @XmlRootElement
 public class User {
 
@@ -28,6 +32,8 @@ public class User {
 		this.tel = tel;
 
 	}
+
+	// get set for user
 
 	public int getId() {
 		return id;

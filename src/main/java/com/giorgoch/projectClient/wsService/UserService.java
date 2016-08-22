@@ -12,6 +12,11 @@ public class UserService {
 
 	private Map<Integer, User> users = DBUtils.getUsers();
 
+	/**
+	 * @author giorgos chatziefstratiou
+	 * adding some test data 
+	 * 
+	 */
 	public UserService() {
 		users.put(1, new User(1, "Alladin", "The Thief", "Persia  3", "12345", "Persia", "123456789"));
 		users.put(2, new User(2, "Lucky", "Loke", "Texas", "74185", "El paso", "000000000"));

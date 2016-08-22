@@ -13,7 +13,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class HomeController {
 
-	
+	/**
+	 * @author giorgos chatziefstratiou
+	 * this demonstrates a basic  spring mvc controller
+	 * 
+	 */
 
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
@@ -21,12 +25,6 @@ public class HomeController {
 	public String home(Model model) {
 		logger.info("Welcome home! ");	
 		return "jsps/home";
-	}
-
-	@RequestMapping(value = "/")
-	public String showIndexPage() {
-		logger.info("default index page");
-		return "/jsps/index";
 	}
 
 }

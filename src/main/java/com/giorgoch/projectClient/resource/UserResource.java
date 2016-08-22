@@ -14,19 +14,33 @@ import com.giorgoch.projectClient.wsService.UserService;
 @Path("/user")
 public class UserResource {
 
+	
+	/**
+	 * @author giorgos chatziefstratiou
+	 * Jersey Rest Service 
+	 * returning  json and xml format
+	 * using @GET to retrieve data
+	 * 
+	 */
 	UserService userService = new UserService();
 
 	@GET
 	@Path("/Json")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<User> getUserJson() {
+		//returning all users  in json
 		return userService.getAllUsers();
 	}
 
+	/**
+	 * @pathparam userid to get the user data to retrieve specific user
+	 * @return
+	 */
 	@GET
 	@Path("/Json/{userId}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public User getSingleUserJson(@PathParam("userId") int id) {
+		//returning specific user  in json
 		return userService.getUser(id);
 	}
 
@@ -34,6 +48,7 @@ public class UserResource {
 	@Path("/Xml/{userId}")
 	@Produces(MediaType.APPLICATION_XML)
 	public User getSingleUserXML(@PathParam("userId") int id) {
+		//returning specific user  in xml
 		return userService.getUser(id);
 	}
 
@@ -41,6 +56,7 @@ public class UserResource {
 	@Path("/Xml")
 	@Produces(MediaType.APPLICATION_XML)
 	public List<User> getUserXML() {
+		//returning all users  in Xml
 		return userService.getAllUsers();
 	}
 
