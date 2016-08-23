@@ -31,8 +31,8 @@
 			<strong>http://localhost:8080/projectClient/webservice/user/Json/{userid}</strong>
 		</a> in json format
 		</br>
-		<a href="http://localhost:8080/projectClient/webservice/user/Json/{userid}">
-			<strong>http://localhost:8080/projectClient/webservice/user/Json/{userid}</strong>
+		<a href="http://localhost:8080/projectClient/webservice/user/Xml/{userid}">
+			<strong>http://localhost:8080/projectClient/webservice/user/Xml/{userid}</strong>
 		</a> in Xml format
 	</ul>
 
