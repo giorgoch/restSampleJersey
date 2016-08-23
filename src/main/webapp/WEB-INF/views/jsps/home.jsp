@@ -9,41 +9,49 @@
 <title>Index Page</title>
 </head>
 <body>
-	<p>Hi there this is a demo version of jersey WebServices.
+	<p>Hi there This is a Demo for creating and consuming Rest web
+		services.<br> 
+		It demonstrates basic spring mvc also.<br>
+		I also use HttpClient from https://hc.apache.org/httpcomponents-client-ga/ to consume Rest service.<br>
+		TODO Aop for logging. <br>
+		TODO IOC for testing.<br>
 	<ul style="list-style-type: none">
 		<li>I have implement 2 functions for retriving a user and a list
 			of users.</li>
-		<li>you can retrieve all users by adding on the url as Json</li><br>
+		<li>you can retrieve all users by adding on the url as Json</li>
+		<br>
 		<a href="http://localhost:8080/projectClient/webservice/user/Json">
-			<Strong>http://localhost:8080/projectClient/webservice/user/Json</Strong> 
+			<Strong>http://localhost:8080/projectClient/webservice/user/Json</Strong>
 		</a>in Json format.
 		</br>
 		<li>you can retrieve all users by adding on the url as Xml <br></li>
 		<a href="http://localhost:8080/projectClient/webservice/user/Xml">
-			<Strong>http://localhost:8080/projectClient/webservice/user/Xml</Strong>  
+			<Strong>http://localhost:8080/projectClient/webservice/user/Xml</Strong>
 		</a>in XML format.
 		</br>
 		<li>and you can retrieve one user with user id where {userid}=
-		the number of the user 1.2.3...
-		</li>
+			the number of the user 1.2.3...</li>
 		<a
 			href="http://localhost:8080/projectClient/webservice/user/Json/{userid}">
 			<strong>http://localhost:8080/projectClient/webservice/user/Json/{userid}</strong>
 		</a> in json format
 		</br>
-		<a href="http://localhost:8080/projectClient/webservice/user/Xml/{userid}">
+		<a
+			href="http://localhost:8080/projectClient/webservice/user/Xml/{userid}">
 			<strong>http://localhost:8080/projectClient/webservice/user/Xml/{userid}</strong>
 		</a> in Xml format
 	</ul>
 
-	<p>
-		The users listed are
-		<ol type="1">
-		<li>Alladin, The Thief, Persia 3, 12345, Persia 123456789 </li> <br>
-		<li> Lucky, Luke, Texas, 74185, El paso, 000000000 </li><br>
-		<li>Marty, Martian, Mars 8, 00000, Mars, 7777777777</li> <br> 
-		<li>Zeus, The Olympian, Mount Olympos, 56789, Olympos, 99999999 </li>
-		</ol>
-		 <br>
+	<p>The users listed are
+	<ol type="1">
+		<li>Alladin, The Thief, Persia 3, 12345, Persia 123456789</li>
+		<br>
+		<li>Lucky, Luke, Texas, 74185, El paso, 000000000</li>
+		<br>
+		<li>Marty, Martian, Mars 8, 00000, Mars, 7777777777</li>
+		<br>
+		<li>Zeus, The Olympian, Mount Olympos, 56789, Olympos, 99999999</li>
+	</ol>
+	<br>
 </body>
 </html>
