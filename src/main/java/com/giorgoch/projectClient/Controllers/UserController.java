@@ -31,21 +31,21 @@ public class UserController {
 	public String registrationForm(Model model) {
 		// logger.info("Welcome home! ");
 		model.addAttribute("user", new User());
-		return "user/registerform";
+		return "jsps/users/registerform";
 	}
 
 	@RequestMapping(value = "/doCreate")
 	public String createAccountXML(Model model, @Valid User user, BindingResult result) {
 		if (result.hasErrors()) {
 			System.out.println("::" + result + "::");
-			return "user/createaccount";
+			return "jsps/users/createaccount";
 		}
 		if (!result.hasErrors()) {
 			user.setId(1);
 			//userService.createXMLFormFormData(user);
 		}
 		System.out.println(user + "user values");
-		return "user/accountcreated";
+		return "jsps/users/accountcreated";
 	}
 
 }

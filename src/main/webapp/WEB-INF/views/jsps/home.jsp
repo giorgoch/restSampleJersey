@@ -9,6 +9,10 @@
 <title>Index Page</title>
 </head>
 <body>
+<p>
+		<a href="${pageContext.request.contextPath}/createaccount">Register</a>
+	</p>
+
 	<p>Hi there This is a Demo for creating and consuming Rest web
 		services.<br> 
 		It demonstrates basic spring mvc also.<br>
