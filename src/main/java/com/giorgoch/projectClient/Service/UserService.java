@@ -14,6 +14,6 @@ public interface UserService {
 
 	public List<User> getusers();
 
-	public void createXMLFormFormData(User user);
+	
 
 }
