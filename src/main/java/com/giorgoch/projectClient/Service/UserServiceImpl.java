@@ -11,31 +11,29 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public List<User> getUser() throws Exception {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 
 	@Override
 	public void createAcount(User user) {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public User registeredNewUserAccount(User user) {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 
 	@Override
 	public List<User> getusers() {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 
 	@Override
 	public void createXMLFormFormData(User user) {
-		// TODO Auto-generated method stub
 
 	}
 

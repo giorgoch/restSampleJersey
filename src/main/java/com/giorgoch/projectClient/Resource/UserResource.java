@@ -1,4 +1,4 @@
-package com.giorgoch.projectClient.resource;
+package com.giorgoch.projectClient.Resource;
 
 import java.util.List;
 
