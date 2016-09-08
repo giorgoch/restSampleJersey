@@ -33,7 +33,7 @@
 		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
 		<init-param>
 			<param-name>jersey.config.server.provider.packages</param-name>
-			<param-value>com.giorgoch.projectClient.resource</param-value>
+			<param-value>com.giorgoch.projectClient.Resource</param-value>
 		</init-param>
 		<load-on-startup>2</load-on-startup>
 	</servlet>

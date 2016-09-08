@@ -13,7 +13,7 @@ public class DBUtils {
 	 * Here the map is representing a database
 	 * Database Connection can be established a little different
 	 */
-	private static Map<Integer, User> users = new HashMap<>();
+	private static Map<Integer, User> users = new HashMap<Integer,User>();
 
 	public static Map<Integer, User> getUsers() {
 		return users;

@@ -6,7 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import com.giorgoch.projectClient.wsService.UserService;
+import com.giorgoch.projectClient.wsService.UserServiceWS;
 
 @ActiveProfiles("dev")
 @ContextConfiguration(locations = { "classpath:*/dao-context.xml", "classpath:*/security-context.xml",
@@ -21,7 +21,7 @@ public class aopTests {
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("classpath:/aop.xml");
         
         //IOC with spring
-        UserService userService=(UserService)ctx.getBean("userAop");
+        UserServiceWS userService=(UserServiceWS)ctx.getBean("userAop");
         
  
         
