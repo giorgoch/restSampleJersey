@@ -1,6 +1,5 @@
 package com.giorgoch.projectClient.Controllers;
 
-
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
@@ -13,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.giorgoch.projectClient.Model.User;
+import com.giorgoch.projectClient.Service.UserService;
 
 @Controller
 public class UserController {
@@ -21,6 +21,7 @@ public class UserController {
 
 	@Autowired
 	UserService userService;
+
 	@Autowired
 	public void setUserService(UserService userService) {
 		this.userService = userService;
@@ -34,14 +35,14 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/doCreate")
-	public String createAccountXML(Model model,  @Valid User user, BindingResult result) {
-		if (result.hasErrors()) {   
+	public String createAccountXML(Model model, @Valid User user, BindingResult result) {
+		if (result.hasErrors()) {
 			System.out.println("::" + result + "::");
 			return "user/createaccount";
 		}
 		if (!result.hasErrors()) {
-		user.setId(1); 
-				userService.createXMLFormFormData(user);
+			user.setId(1);
+			//userService.createXMLFormFormData(user);
 		}
 		System.out.println(user + "user values");
 		return "user/accountcreated";
