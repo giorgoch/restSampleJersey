@@ -6,6 +6,7 @@ import java.util.List;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
@@ -103,13 +104,17 @@ public class UserServiceImpl implements UserService {
 			TransformerFactory transformerFactory = TransformerFactory.newInstance();
 			Transformer transformer = transformerFactory.newTransformer();
 			DOMSource source = new DOMSource(doc);
+			//For develpmenet only to be formatet otherwise it's size is bigger
+			//therefore without Outputkeys is one line format  reduce the size
+			//transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+						
 			StreamResult result = new StreamResult(new File("D:\\xmloutput\\file.xml"));
 
 			// Output to console for testing
 			// StreamResult result = new StreamResult(System.out);
 
 			transformer.transform(source, result);
-
+			
 			System.out.println("File saved!");
 
 			
