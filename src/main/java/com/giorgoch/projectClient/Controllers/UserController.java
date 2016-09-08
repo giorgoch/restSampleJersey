@@ -42,7 +42,7 @@ public class UserController {
 		}
 		if (!result.hasErrors()) {
 			user.setId(1);
-			//userService.createXMLFormFormData(user);
+			userService.createXMLFormFormData(user);
 		}
 		System.out.println(user + "user values");
 		return "jsps/users/accountcreated";
