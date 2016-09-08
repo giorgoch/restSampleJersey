@@ -9,7 +9,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import com.giorgoch.projectClient.Model.*;
-import com.giorgoch.projectClient.wsService.UserService;
+import com.giorgoch.projectClient.wsService.UserServiceWS;
 
 @Path("/user")
 public class UserResource {
@@ -22,7 +22,7 @@ public class UserResource {
 	 * using @GET to retrieve data
 	 * 
 	 */
-	UserService userService = new UserService();
+	UserServiceWS userService = new UserServiceWS();
 
 	@GET
 	@Path("/Json")

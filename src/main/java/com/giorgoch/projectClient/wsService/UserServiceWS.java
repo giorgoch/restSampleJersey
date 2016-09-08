@@ -8,7 +8,7 @@ import com.giorgoch.projectClient.Dao.ServiceWS.DBUtils;
 import com.giorgoch.projectClient.Model.User;
 
 
-public class UserService {
+public class UserServiceWS {
 
 	private Map<Integer, User> users = DBUtils.getUsers();
 
@@ -17,7 +17,7 @@ public class UserService {
 	 * adding some test data 
 	 * 
 	 */
-	public UserService() {
+	public UserServiceWS() {
 		users.put(1, new User(1, "Alladin", "The Thief", "Persia  3", "12345", "Persia", "123456789"));
 		users.put(2, new User(2, "Lucky", "Loke", "Texas", "74185", "El paso", "000000000"));
 		users.put(3, new User(3, "Marty", "Martian", "Mars 8", "00000", "Mars", "7777777777"));
