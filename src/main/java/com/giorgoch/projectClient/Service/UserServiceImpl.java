@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import com.giorgoch.projectClient.Model.User;
 
 @Service("userSeeviceImpl")
-public class UserServiceImpl  implements UserService{
+public class UserServiceImpl implements UserService {
 
 	@Override
 	public List<User> getUser() throws Exception {
@@ -18,7 +18,7 @@ public class UserServiceImpl  implements UserService{
 	@Override
 	public void createAcount(User user) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -36,7 +36,7 @@ public class UserServiceImpl  implements UserService{
 	@Override
 	public void createXMLFormFormData(User user) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }
