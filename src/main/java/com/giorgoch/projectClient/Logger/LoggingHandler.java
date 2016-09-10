@@ -3,6 +3,7 @@ package com.giorgoch.projectClient.Logger;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -28,14 +29,22 @@ public class LoggingHandler {
 		// System.out.println("registration form user controller");
 	}
 
-	@Before(value = "execution(* com.giorgoch.projectClient.XMLParsers.Writers.XMLPraserWriterImpl.createXMLFormFormData(..))")
+	@Before("loggingXMLFormParserClass()")
 	public void loggingcreateXMLFormFormDataStart() {
 		log.info("Start creating xml with form data ");
 	}
 
-	@After(value = "execution(* com.giorgoch.projectClient.XMLParsers.Writers.XMLPraserWriterImpl.createXMLFormFormData(..))")
+	@After(  "loggingXMLFormParserClass()")
 	public void loggingcreateXMLFormFormDataEnd() {
 		log.info("End creating xml wwith form data");
 	}
 
+	
+	@Pointcut("execution(* com.giorgoch.projectClient.XMLParsers.Writers.XMLPraserWriterImpl.createXMLFormFormData(..))")
+	public void  loggingXMLFormParserClass(){
+		
+	}
+	
+	
+	
 }
