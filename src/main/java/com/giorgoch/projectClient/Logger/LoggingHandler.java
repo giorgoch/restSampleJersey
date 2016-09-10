@@ -28,12 +28,12 @@ public class LoggingHandler {
 		// System.out.println("registration form user controller");
 	}
 
-	@Before(value = "execution(* com.giorgoch.projectClient.XMLParsers.Writers.XMLPraserWriterImpl.*(..))")
+	@Before(value = "execution(* com.giorgoch.projectClient.XMLParsers.Writers.XMLPraserWriterImpl.createXMLFormFormData(..))")
 	public void loggingcreateXMLFormFormDataStart() {
 		log.info("Start creating xml with form data ");
 	}
 
-	@After(value = "execution(* com.giorgoch.projectClient.XMLParsers.Writers.XMLPraserWriterImpl.*(..))")
+	@After(value = "execution(* com.giorgoch.projectClient.XMLParsers.Writers.XMLPraserWriterImpl.createXMLFormFormData(..))")
 	public void loggingcreateXMLFormFormDataEnd() {
 		log.info("End creating xml wwith form data");
 	}
