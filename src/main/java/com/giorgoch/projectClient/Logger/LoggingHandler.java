@@ -1,6 +1,8 @@
 package com.giorgoch.projectClient.Logger;
 
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -28,35 +30,48 @@ public class LoggingHandler {
 		log.info("create account xml method in controller ");
 		// System.out.println("registration form user controller");
 	}
-
+/*
 	@Before("loggingXMLFormParserClass()")
 	public void loggingcreateXMLFormFormDataStart() {
 		log.info("Start creating xml with form data ");
 	}
 
-	@After(  "loggingXMLFormParserClass()")
+	@After("loggingXMLFormParserClass()")
 	public void loggingcreateXMLFormFormDataEnd() {
 		log.info("End creating xml wwith form data");
 	}
-
-	
+*/
 	@Pointcut("execution(* com.giorgoch.projectClient.XMLParsers.Writers.XMLPraserWriterImpl.createXMLFormFormData(..))")
-	public void  loggingXMLFormParserClass(){
-		
+	public void loggingXMLFormParserClass() {
+
 	}
-	///projectClient/src/main/java/com/giorgoch/projectClient/Resource/UserResource.java
+
 	@Pointcut("execution(* com.giorgoch.projectClient.Resource.UserResource.*())")
-	public void loggingWSServices(){
-		
+	public void loggingWSServices() {
+
 	}
-	
-	@Before(value="loggingWSServices()")
+
+	@Before(value = "loggingWSServices()")
 	public void beforeLoggingWsGetJson() {
 		log.info("Start creating Json service. ");
 	}
 
-	@After( value="loggingWSServices()")
+	@After(value = "loggingWSServices()")
 	public void afterLoggingWsGetJson() {
 		log.info("End Json service created!");
+	}
+	
+	@Around("loggingXMLFormParserClass()")
+	public void aroundAdvice(ProceedingJoinPoint p){
+		log.info("Around advice .....before");
+		
+		
+		try {
+			p.proceed();
+		} catch (Throwable e) {
+			System.out.println("In around Advice ..."+e.getMessage());
+		}
+		
+		log.info("Around advice.....after");
 	}
 }
