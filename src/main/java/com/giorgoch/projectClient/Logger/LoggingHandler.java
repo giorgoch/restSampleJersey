@@ -1,12 +1,12 @@
 package com.giorgoch.projectClient.Logger;
- 
+
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
- 
+
 @Aspect
 @Component
 public class LoggingHandler {
@@ -33,7 +33,6 @@ public class LoggingHandler {
 		log.info("Start creating xml with form data ");
 	}
 
-	/// projectClient/src/main/java/com/giorgoch/projectClient/XMLParsers/Writers/XMLPraserWriterImpl.java
 	@After(value = "execution(* com.giorgoch.projectClient.XMLParsers.Writers.XMLPraserWriterImpl.*(..))")
 	public void loggingcreateXMLFormFormDataEnd() {
 		log.info("End creating xml wwith form data");
