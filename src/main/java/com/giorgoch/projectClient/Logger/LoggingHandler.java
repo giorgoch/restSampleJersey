@@ -30,7 +30,7 @@ public class LoggingHandler {
 		log.info("create account xml method in controller ");
 		// System.out.println("registration form user controller");
 	}
-/*
+
 	@Before("loggingXMLFormParserClass()")
 	public void loggingcreateXMLFormFormDataStart() {
 		log.info("Start creating xml with form data ");
@@ -40,7 +40,7 @@ public class LoggingHandler {
 	public void loggingcreateXMLFormFormDataEnd() {
 		log.info("End creating xml wwith form data");
 	}
-*/
+
 	@Pointcut("execution(* com.giorgoch.projectClient.XMLParsers.Writers.XMLPraserWriterImpl.createXMLFormFormData(..))")
 	public void loggingXMLFormParserClass() {
 
@@ -60,18 +60,17 @@ public class LoggingHandler {
 	public void afterLoggingWsGetJson() {
 		log.info("End Json service created!");
 	}
-	
+
 	@Around("loggingXMLFormParserClass()")
-	public void aroundAdvice(ProceedingJoinPoint p){
+	public void aroundAdvice(ProceedingJoinPoint p) {
 		log.info("Around advice .....before");
-		
-		
+
 		try {
 			p.proceed();
 		} catch (Throwable e) {
-			System.out.println("In around Advice ..."+e.getMessage());
+			System.out.println("In around Advice ..." + e.getMessage());
 		}
-		
+
 		log.info("Around advice.....after");
 	}
 }
