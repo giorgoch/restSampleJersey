@@ -45,7 +45,7 @@ public class LoggingHandler {
 		
 	}
 	///projectClient/src/main/java/com/giorgoch/projectClient/Resource/UserResource.java
-	@Pointcut("execution(* com.giorgoch.projectClient.Resource.UserResource.getJson())")
+	@Pointcut("execution(* com.giorgoch.projectClient.Resource.UserResource.*())")
 	public void loggingWSServices(){
 		
 	}
