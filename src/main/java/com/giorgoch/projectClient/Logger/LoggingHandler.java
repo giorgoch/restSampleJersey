@@ -44,7 +44,19 @@ public class LoggingHandler {
 	public void  loggingXMLFormParserClass(){
 		
 	}
+	///projectClient/src/main/java/com/giorgoch/projectClient/Resource/UserResource.java
+	@Pointcut("execution(* com.giorgoch.projectClient.Resource.UserResource.getJson())")
+	public void loggingWSServices(){
+		
+	}
 	
-	
-	
+	@Before(value="loggingWSServices()")
+	public void beforeLoggingWsGetJson() {
+		log.info("Start creating Json service. ");
+	}
+
+	@After( value="loggingWSServices()")
+	public void afterLoggingWsGetJson() {
+		log.info("End Json service created!");
+	}
 }
