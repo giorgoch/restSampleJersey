@@ -1,9 +1,14 @@
 package com.giorgoch.projectClient.Logger;
 
+import java.util.List;
+
 import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
+
+import com.giorgoch.projectClient.Model.User;
 
 @Aspect
 @Component
@@ -14,16 +19,17 @@ public class LoggingHandler {
 	 * 
 	 */
 
-	private final Logger log = LoggerFactory.getLogger(getClass());
+	 Logger log = LoggerFactory.getLogger(getClass());
 
-	public void print() {
-		log.info("print");
-		System.out.println("logging print");
+	public void loggingUserRegistrationForm() {
+		log.info("registration form user controller");
+		 //System.out.println("registration form user controller");
 	}
-
-	public void printData() {
-		log.info("data");
-		System.out.println("logging data ");
+	
+	 
+	public void loggingCreateAccountXML() {
+		 log.info("create account xml ");
+		// System.out.println("registration form user controller");
 	}
 
 }

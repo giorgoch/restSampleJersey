@@ -39,7 +39,7 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/doCreate")
-	public String createAccountXML(Model model, @Valid User user, BindingResult result) {
+	public String createAccountXML( @Valid User user, BindingResult result) {
 		if (result.hasErrors()) {
 			System.out.println("::" + result + "::");
 			return "jsps/users/createaccount";
