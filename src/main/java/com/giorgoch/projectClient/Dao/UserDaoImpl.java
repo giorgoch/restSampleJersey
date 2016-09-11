@@ -4,6 +4,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
+import javax.sql.DataSource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -13,14 +15,14 @@ import org.springframework.jdbc.core.RowMapper;
 
 import com.giorgoch.projectClient.Model.User;
 
-@Component("userdaoImpl")
+@Component("userdao")
 public class UserDaoImpl implements UserDao {
 
 	private NamedParameterJdbcTemplate jdbc;
 
 	@Autowired
-	public void setJdbc(NamedParameterJdbcTemplate jdbc) {
-		this.jdbc = jdbc;
+	public void setJdbc(DataSource  jdbc) {
+		this.jdbc = new NamedParameterJdbcTemplate(jdbc);
 	}
 
 	@Override
