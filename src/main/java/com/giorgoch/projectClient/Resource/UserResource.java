@@ -8,10 +8,14 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import org.springframework.stereotype.Component;
+
+import com.giorgoch.projectClient.Logger.LoggingHandler;
 import com.giorgoch.projectClient.Model.*;
 import com.giorgoch.projectClient.wsService.UserServiceWS;
 
 @Path("/user")
+@Component
 public class UserResource {
 
 	
@@ -59,5 +63,6 @@ public class UserResource {
 		//returning all users  in Xml
 		return userService.getAllUsers();
 	}
-
+	
+	
 }

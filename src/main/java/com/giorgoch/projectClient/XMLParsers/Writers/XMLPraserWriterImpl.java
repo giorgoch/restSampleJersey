@@ -18,15 +18,14 @@ import org.w3c.dom.Element;
 
 import com.giorgoch.projectClient.Model.User;
 
-
 @Service("xmlParserReaderWriterImpl")
-public class XMLPraserWriterImpl implements XMLParserWriter{
+public class XMLPraserWriterImpl implements XMLParserWriter {
 
 	@Override
 	public void createXMLFormFormData(User user) {
-			
-		try{
-			
+
+		try {
+
 			DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
 
@@ -66,7 +65,7 @@ public class XMLPraserWriterImpl implements XMLParserWriter{
 			Element postcode = doc.createElement("Postcode");
 			postcode.appendChild(doc.createTextNode(user.getPostcode()));
 			userdetails.appendChild(postcode);
-			
+
 			Element city = doc.createElement("City");
 			city.appendChild(doc.createTextNode(user.getCity()));
 			userdetails.appendChild(city);
@@ -74,33 +73,28 @@ public class XMLPraserWriterImpl implements XMLParserWriter{
 			Element tel = doc.createElement("Tel");
 			tel.appendChild(doc.createTextNode(user.getTel()));
 			userdetails.appendChild(tel);
-			
+
 			// write the content into xml file
 			TransformerFactory transformerFactory = TransformerFactory.newInstance();
 			Transformer transformer = transformerFactory.newTransformer();
 			DOMSource source = new DOMSource(doc);
-			//For develpmenet only to be formatet otherwise it's size is bigger
-			//therefore without Outputkeys is one line format  reduce the size
-			//transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-						
+			// For develpmenet only to be formatet otherwise it's size is bigger
+			// therefore without Outputkeys is one line format reduce the size
+			// transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
 			StreamResult result = new StreamResult(new File("D:\\xmloutput\\file.xml"));
 
 			// Output to console for testing
 			// StreamResult result = new StreamResult(System.out);
 
 			transformer.transform(source, result);
-			
-			System.out.println("File saved!");
 
-			
-		}catch (ParserConfigurationException pce) {
+			System.out.println("File saved!");
+		} catch (ParserConfigurationException pce) {
 			pce.printStackTrace();
-		  } catch (TransformerException tfe) {
+		} catch (TransformerException tfe) {
 			tfe.printStackTrace();
-		  }
+		}
 	}
 
-
-	
-	
 }
