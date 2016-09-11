@@ -25,9 +25,41 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 
+	<jee:jndi-lookup jndi-name="java:comp/env/jdbc/testingdbs"
+		id="dataSource" expected-type="javax.sql.DataSource">
+	</jee:jndi-lookup>
+
+	<beans:bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<beans:property name="dataSource" ref="dataSource" />
+	</beans:bean>
+
 	<context:component-scan base-package="com.giorgoch.projectClient" />
 
+	<context:component-scan base-package="com.giorgoch.projectClient.Resource" />
 
-	
+	<beans:bean id="logger"
+		class="com.giorgoch.projectClient.Commons.LoggingHandler"></beans:bean>
+	<beans:bean id="userresource"
+		class="com.giorgoch.projectClient.Resource.UserResource"></beans:bean>
+
+	<aop:aspectj-autoproxy />
+	<aop:config>
+		<aop:pointcut
+			expression="execution(* com.giorgoch.projectClient.Controllers.UserController.registrationForm(..))"
+			id="register" />
+		<aop:aspect ref="logger" id="logginghandler">
+			<aop:after method="loggingUserRegistrationForm"
+				pointcut-ref="register" />
+		</aop:aspect>
+	</aop:config>
+
+	<aop:config>
+		<aop:pointcut
+			expression="execution(* com.giorgoch.projectClient.Controllers.UserController.createAccountXML(..))"
+			id="accountxml" />
+		<aop:aspect ref="logger" id="logginghandler2">
+			<aop:after method="loggingCreateAccountXML" pointcut-ref="accountxml" />
+		</aop:aspect>
+	</aop:config>
 
 </beans:beans>
