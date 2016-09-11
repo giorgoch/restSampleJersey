@@ -15,7 +15,7 @@ public class LoggingHandler {
 	 * 
 	 */
 
-	Logger log = LoggerFactory.getLogger(getClass());
+	 Logger log = LoggerFactory.getLogger(getClass());
 
 	public void loggingUserRegistrationForm() {
 		log.info("registration form user controller");

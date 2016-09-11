@@ -18,8 +18,6 @@ import com.giorgoch.projectClient.XMLParsers.Writers.XMLParserWriter;
 @Controller
 public class UserController {
 
-	Logger logger = LoggerFactory.getLogger(UserController.class);
-
 	@Autowired
 	UserService userService;
 
@@ -30,16 +28,15 @@ public class UserController {
 
 	@Autowired
 	XMLParserWriter xmlParserwriter;
-	
+
 	@RequestMapping(value = "/createaccount", method = RequestMethod.GET)
 	public String registrationForm(Model model) {
-		// logger.info("Welcome home! ");
 		model.addAttribute("user", new User());
 		return "jsps/users/registerform";
 	}
 
 	@RequestMapping(value = "/doCreate")
-	public String createAccountXML( @Valid User user, BindingResult result) {
+	public String createAccountXML(@Valid User user, BindingResult result) {
 		if (result.hasErrors()) {
 			System.out.println("::" + result + "::");
 			return "jsps/users/createaccount";
