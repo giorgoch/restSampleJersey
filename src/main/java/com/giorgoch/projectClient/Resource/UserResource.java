@@ -10,7 +10,7 @@ import javax.ws.rs.core.MediaType;
 
 import org.springframework.stereotype.Component;
 
-import com.giorgoch.projectClient.Logger.LoggingHandler;
+import com.giorgoch.projectClient.Commons.LoggingHandler;
 import com.giorgoch.projectClient.Model.*;
 import com.giorgoch.projectClient.wsService.UserServiceWS;
 

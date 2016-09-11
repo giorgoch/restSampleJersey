@@ -1,4 +1,4 @@
-package com.giorgoch.projectClient.Logger;
+package com.giorgoch.projectClient.Commons;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;

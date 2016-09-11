@@ -1,4 +1,4 @@
-package com.giorgoch.projectClient.Logger;
+package com.giorgoch.projectClient.Commons;
 
 import java.math.BigDecimal;
 import java.math.MathContext;

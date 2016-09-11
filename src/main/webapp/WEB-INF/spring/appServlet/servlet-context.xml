@@ -29,7 +29,7 @@
 	
 	<context:component-scan base-package="com.giorgoch.projectClient.Resource" />
 	
-	<beans:bean id="logger" class="com.giorgoch.projectClient.Logger.LoggingHandler"></beans:bean>
+	<beans:bean id="logger" class="com.giorgoch.projectClient.Commons.LoggingHandler"></beans:bean>
 	<beans:bean id="userresource" class="com.giorgoch.projectClient.Resource.UserResource"></beans:bean>
 
 	<aop:aspectj-autoproxy />
