@@ -1,5 +1,6 @@
 package com.giorgoch.projectClient.Dao;
 
-public class UserDaoImpl {
+public class UserDaoImpl implements UserDao {
 
+	// TODO unimplemented methods
 }
