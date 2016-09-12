@@ -6,8 +6,6 @@ It demonstrates basic spring mvc also.
 
 I also use HttpClient from  https://hc.apache.org/httpcomponents-client-ga/ to consume  Rest service. 
 
-TODO Aop for logging.
-
 TODO IOC for testing.
 
 I have use 
