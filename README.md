@@ -5,6 +5,7 @@ This is a Demo for creating and consuming Rest web services.
 It demonstrates basic spring mvc also.
 
 I also use HttpClient from  https://hc.apache.org/httpcomponents-client-ga/ to consume  Rest service. 
+
 TODO IOC for testing.
 
 I have use 
