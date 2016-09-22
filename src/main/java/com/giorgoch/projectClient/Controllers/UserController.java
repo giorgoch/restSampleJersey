@@ -18,10 +18,10 @@ import com.giorgoch.projectClient.XMLParsers.Writers.XMLParserWriter;
 @Controller
 public class UserController {
 
-	@Autowired
+	//@Autowired
 	UserService userService;
 
-	@Autowired
+	//@Autowired
 	public void setUserService(UserService userService) {
 		this.userService = userService;
 	}
