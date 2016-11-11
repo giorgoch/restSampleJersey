@@ -1,5 +1,6 @@
 package com.giorgoch.projectClient.Controllers;
 
+import javax.interceptor.Interceptors;
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
@@ -11,17 +12,19 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.giorgoch.projectClient.Commons.MethodLogger;
 import com.giorgoch.projectClient.Model.*;
 import com.giorgoch.projectClient.Service.UserService;
 import com.giorgoch.projectClient.XMLParsers.Writers.XMLParserWriter;
 
 @Controller
+@Interceptors(MethodLogger.class)
 public class UserController {
 
-	@Autowired
+	//@Autowired
 	UserService userService;
 
-	@Autowired
+	//@Autowired
 	public void setUserService(UserService userService) {
 		this.userService = userService;
 	}
