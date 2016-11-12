@@ -5,8 +5,8 @@ import javax.validation.ConstraintValidatorContext;
 
 public class ValidPostCodeImpl implements ConstraintValidator<ValidPostCode, String>{
 
-	private int min;
-	private int max;
+	private int valid;
+	private int invalid;
 	
 	@Override
 	public void initialize(ValidPostCode constraintAnnotation) {
