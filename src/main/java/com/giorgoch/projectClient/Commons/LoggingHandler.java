@@ -34,12 +34,12 @@ public class LoggingHandler {
 
 	@After("loggingXMLFormParserClass()")
 	public void loggingcreateXMLFormFormDataEnd() {
-		log.info("End creating xml wwith form data");
+		//log.info("End creating xml wwith form data");
 	}
 
 	@Pointcut("execution(* com.giorgoch.projectClient.XMLParsers.Writers.XMLPraserWriterImpl.createXMLFormFormData(..))")
 	public void loggingXMLFormParserClass() {
-		log.info("testing the pointcut for xml parser");
+	//	log.info("testing the pointcut for xml parser");
 	}
 
 	@Pointcut("execution(* com.giorgoch.projectClient.Resource.UserResource.*())")
