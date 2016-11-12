@@ -21,7 +21,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Documented
 @Constraint(validatedBy =com.giorgoch.projectClient.Validation.ValidPostCodeImpl.class)
 public @interface ValidPostCode {
-	String message() default  "This does not appear to be a valid email address";
+	String message() default  "This does not appear to be a valid Post Code";
 
 	Class<?>[] groups() default { };
 
