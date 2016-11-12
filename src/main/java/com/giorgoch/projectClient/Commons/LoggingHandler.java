@@ -39,12 +39,12 @@ public class LoggingHandler {
 
 	@Pointcut("execution(* com.giorgoch.projectClient.XMLParsers.Writers.XMLPraserWriterImpl.createXMLFormFormData(..))")
 	public void loggingXMLFormParserClass() {
-
+		log.info("testing the pointcut for xml parser");
 	}
 
 	@Pointcut("execution(* com.giorgoch.projectClient.Resource.UserResource.*())")
 	public void loggingWSServices() {
-
+		log.info("testing  the  logging ws services ");
 	}
 
 	@Before(value = "loggingWSServices()")
