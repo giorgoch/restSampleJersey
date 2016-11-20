@@ -8,6 +8,7 @@ import org.apache.http.impl.client.HttpClients;
 public class XmlRendererImpl {
 	
     String sendXmlToUrl="http://localhost:8080/projectClient";
+    
 	CloseableHttpClient httpclient = HttpClients.createDefault();
 	HttpGet httpget = new HttpGet("");
 	CloseableHttpResponse response = httpclient.execute(httpget); 
