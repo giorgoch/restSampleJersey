@@ -22,7 +22,7 @@ public class XmlRendererImpl {
 		HttpClient client = new DefaultHttpClient();
     	 HttpPost post = new HttpPost(sendXmlToUrl);
     	
-    	try{
+    	try{//TODO post with httpclient
     	List<NameValuePair> namedValuePair = new ArrayList<NameValuePair>(1);	
     	}catch(IOException e){
     		
