@@ -5,11 +5,11 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 
-public class XMLSenderImpl {
+public class XmlRendererImpl {
 	
     String sendXmlToUrl="http://localhost:8080/projectClient";
 	CloseableHttpClient httpclient = HttpClients.createDefault();
 	HttpGet httpget = new HttpGet("");
-	CloseableHttpResponse response = httpclient.execute(httpget);
+	CloseableHttpResponse response = httpclient.execute(httpget); 
 
 }
