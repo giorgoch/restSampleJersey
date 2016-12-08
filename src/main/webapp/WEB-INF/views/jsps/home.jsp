@@ -17,8 +17,7 @@
 		services.<br> 
 		It demonstrates basic spring mvc also.<br>
 		I also use HttpClient from https://hc.apache.org/httpcomponents-client-ga/ to consume Rest service.<br>
-		TODO Aop for logging. <br>
-		TODO IOC for testing.<br>
+		
 	<ul style="list-style-type: none">
 		<li>I have implement 2 functions for retriving a user and a list
 			of users.</li>
