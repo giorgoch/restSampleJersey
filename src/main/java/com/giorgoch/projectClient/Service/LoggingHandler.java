@@ -24,7 +24,7 @@ public class LoggingHandler {
 
 	Logger log = LoggerFactory.getLogger(this.getClass());
 
-	@Pointcut("within(@org.springframework.stereotype.Controller *)")
+	/*@Pointcut("within(@org.springframework.stereotype.Controller *)")
 	public void controller() {
 
 	}
@@ -117,5 +117,5 @@ public class LoggingHandler {
 			}
 		}
 		return returnValue;
-	}
+	}*/
 }
