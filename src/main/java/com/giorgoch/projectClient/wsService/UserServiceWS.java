@@ -10,14 +10,13 @@ import org.springframework.transaction.annotation.Transactional;
 import com.giorgoch.projectClient.Dao.ServiceWS.DBUtils;
 import com.giorgoch.projectClient.Model.User;
 
-@Transactional(propagation=Propagation.REQUIRED,timeout=50)
+@Transactional(propagation = Propagation.REQUIRED, timeout = 50)
 public class UserServiceWS {
 
 	private Map<Integer, User> users = DBUtils.getUsers();
 
 	/**
-	 * @author giorgos chatziefstratiou
-	 * adding some test data 
+	 * @author giorgos chatziefstratiou adding some test data
 	 * 
 	 */
 	public UserServiceWS() {
@@ -33,6 +32,12 @@ public class UserServiceWS {
 
 	public User getUser(int id) {
 		return users.get(id);
+	}
+
+	public User saveUser(User user) {
+		users.put(5, new User(user.getId(), user.getAddress(), user.getCity(), user.getLname(), user.getName(),
+				user.getPostcode(), user.getTel()));
+		return user;
 	}
 
 }
