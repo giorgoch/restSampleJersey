@@ -35,8 +35,8 @@
 
 	<context:component-scan base-package="com.giorgoch.projectClient" />
 
-	<context:component-scan base-package="com.giorgoch.projectClient.Resource" />
-
+	<!-- <context:component-scan base-package="com.giorgoch.projectClient.Resource" />
+ -->
 	<beans:bean id="logger"
 		class="com.giorgoch.projectClient.Commons.LoggingHandler"></beans:bean>
 	<beans:bean id="userresource"
