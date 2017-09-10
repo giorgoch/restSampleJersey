@@ -41,11 +41,6 @@
 		class="com.giorgoch.projectClient.Commons.LoggingHandler"></beans:bean>
 	<beans:bean id="userresource"
 		class="com.giorgoch.projectClient.Resource.UserResource"></beans:bean>
-		
-		<beans:bean id="resource"
-		class="com.giorgoch.projectClient.Resource.UserResource"></beans:bean>
-		
-		
 
 	<aop:aspectj-autoproxy />
 	<aop:config>
