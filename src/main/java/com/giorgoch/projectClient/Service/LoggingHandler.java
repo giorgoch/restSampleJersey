@@ -24,12 +24,12 @@ public class LoggingHandler {
 
 	Logger log = LoggerFactory.getLogger(this.getClass());
 
-	@Pointcut("within(@org.springframework.sterotype.Controller *)")
+	@Pointcut("within(@org.springframework.stereotype.Controller *)")
 	public void controller() {
 
 	}
 
-	@Pointcut("execution(* *.*(..)")
+	@Pointcut("execution(* *.*(..))")
 	public void allMethod() {
 
 	}
@@ -38,11 +38,11 @@ public class LoggingHandler {
 	protected void loggingPublicOperation() {
 	}
 
-	@Pointcut("execution(* *.*(..))")
+	@Pointcut("execution(* *.*(..) )")
 	protected void loggingAllOperation() {
 	}
 
-	@Pointcut("within(org.learn.log..*)")
+	@Pointcut("within(com.giorgoch.projectClient..*)")
 	private void logAnyFunctionWithinResource() {
 	}
 
