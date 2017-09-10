@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.slf4j.Logger;
@@ -68,6 +69,14 @@ public class LoggingHandler {
 	public void logAfter(JoinPoint joinPoint, Object result) {
 		String returnValue = this.getValue(result);
 		log.debug("Method Return value : " + returnValue);
+	}
+
+	// After -> Any method within resource annotated with @Controller annotation
+	// throws an exception ...Log it
+	@AfterThrowing(pointcut = "controller() && allMethod()", throwing = "exception")
+	public void logAfterThrowing(JoinPoint joinPoint, Throwable exception) {
+		log.error("An exception has been thrown in " + joinPoint.getSignature().getName() + " ()");
+		log.error("Cause : " + exception.getCause());
 	}
 
 }
