@@ -5,6 +5,7 @@ import java.util.Enumeration;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.commons.lang.builder.ReflectionToStringBuilder;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
@@ -100,5 +101,17 @@ public class LoggingHandler {
 					+ joinPoint.getSignature().getName() + "()");
 			throw e;
 		}
+	}
+	
+	private String getValue(Object result) {
+		String returnValue = null;
+		if (null != result) {
+			if (result.toString().endsWith("@" + Integer.toHexString(result.hashCode()))) {
+				returnValue = ReflectionToStringBuilder.toString(result);
+			} else {
+				returnValue = result.toString();
+			}
+		}
+		return returnValue;
 	}
 }
