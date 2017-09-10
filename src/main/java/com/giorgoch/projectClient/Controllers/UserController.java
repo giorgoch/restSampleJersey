@@ -21,10 +21,12 @@ import com.giorgoch.projectClient.XMLParsers.Writers.XMLParserWriter;
 @Interceptors(MethodLogger.class)
 public class UserController {
 
-	//@Autowired
+	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
+
+	// @Autowired
 	UserService userService;
 
-	//@Autowired
+	// @Autowired
 	public void setUserService(UserService userService) {
 		this.userService = userService;
 	}
