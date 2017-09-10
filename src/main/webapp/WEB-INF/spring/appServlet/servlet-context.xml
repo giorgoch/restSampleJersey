@@ -52,6 +52,15 @@
 				pointcut-ref="register" />
 		</aop:aspect>
 	</aop:config>
+	
+	<aop:config>
+		<aop:pointcut
+			expression="execution(* com.giorgoch.projectClient.Resource.UserResource.*(..))"
+			id="register" />
+		<aop:aspect ref="logger" id="logging">
+			 <aop:after method="*" pointcut-ref="register" />
+		</aop:aspect>
+	</aop:config>
 
 	<aop:config>
 		<aop:pointcut
