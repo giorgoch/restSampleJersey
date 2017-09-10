@@ -4,13 +4,16 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
-
+import lombok.NoArgsConstructor;
 
 /**
  * @author giorgos chatziefstratiou
  *
  */
+@AllArgsConstructor
+@NoArgsConstructor
 @XmlRootElement
 public @Data class User {
 
@@ -27,9 +30,5 @@ public @Data class User {
 	private String city;
 	@NotEmpty
 	private String tel;
-	
-	
-	
-	
 
 }
