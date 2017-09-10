@@ -10,15 +10,18 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
+import com.giorgoch.projectClient.Controllers.UserController;
 import com.giorgoch.projectClient.Model.User;
 import com.giorgoch.projectClient.wsService.UserServiceWS;
 
 @Path("/user")
 @Component
 public class UserResource {
-
+	private static final Logger logger = LoggerFactory.getLogger(UserResource.class);
 	/**
 	 * @author giorgos chatziefstratiou Jersey Rest Service returning json and
 	 *         xml format using @GET to retrieve data
