@@ -77,7 +77,7 @@ public class LoggingHandler {
 		log.info("Around advice.....after");
 	}
 
-	@Pointcut("within(@org.springframework.stereotype.Controller *)")
+/*	@Pointcut("within(@org.springframework.stereotype.Controller *)")
 	public void controller() {
 
 	}
@@ -97,7 +97,7 @@ public class LoggingHandler {
 
 	@Pointcut("within(com.giorgoch.projectClient..*)")
 	private void logAnyFunctionWithinResource() {
-	}
+	}*/
 
 	// before -> Any resource annotated with @Controller annotation
 	// and all method and function taking HttpServletRequest as first parameter
