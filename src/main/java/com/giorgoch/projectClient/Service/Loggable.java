@@ -1,6 +1,6 @@
 package com.giorgoch.projectClient.Service;
 
-public interface  LoggerService {
+public @interface  Loggable {
 
 	
 	
