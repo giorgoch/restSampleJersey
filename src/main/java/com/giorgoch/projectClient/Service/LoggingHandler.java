@@ -6,6 +6,7 @@ import java.util.Enumeration;
 import javax.servlet.http.HttpServletRequest;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.slf4j.Logger;
@@ -60,7 +61,13 @@ public class LoggingHandler {
 			log.debug("End Header Section of request ");
 		}
 	}
-	
-	
+
+	// After -> All method within resource annotated with @Controller annotation
+	// and return a value
+	@AfterReturning(pointcut = "controller() && allMethod()", returning = "result")
+	public void logAfter(JoinPoint joinPoint, Object result) {
+		String returnValue = this.getValue(result);
+		log.debug("Method Return value : " + returnValue);
+	}
 
 }
