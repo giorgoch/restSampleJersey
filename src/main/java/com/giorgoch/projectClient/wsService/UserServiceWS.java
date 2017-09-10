@@ -4,10 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.giorgoch.projectClient.Dao.ServiceWS.DBUtils;
 import com.giorgoch.projectClient.Model.User;
 
-
+@Transactional(propagation=Propagation.REQUIRED,timeout=50)
 public class UserServiceWS {
 
 	private Map<Integer, User> users = DBUtils.getUsers();
