@@ -8,7 +8,13 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.lang.builder.ReflectionToStringBuilder;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.*;
+import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -77,7 +83,7 @@ public class LoggingHandler {
 		log.info("Around advice.....after");
 	}
 
-/*	@Pointcut("within(@org.springframework.stereotype.Controller *)")
+	@Pointcut("within(@org.springframework.stereotype.Controller *)")
 	public void controller() {
 
 	}
@@ -97,7 +103,7 @@ public class LoggingHandler {
 
 	@Pointcut("within(com.giorgoch.projectClient..*)")
 	private void logAnyFunctionWithinResource() {
-	}*/
+	}
 
 	// before -> Any resource annotated with @Controller annotation
 	// and all method and function taking HttpServletRequest as first parameter
